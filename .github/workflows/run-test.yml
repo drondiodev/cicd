@@ -9,11 +9,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: npm install
-        run: npm i
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Lint code
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Run tests
-        run: npm test
+        run: pnpm test
